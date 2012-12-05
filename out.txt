@@ -56,3 +56,29 @@ Using manifest file manifest.yml
 #1   4.6% of 4 cores   39.2M of 256M   19.0M of 2G
 #2   4.6% of 4 cores   39.2M of 256M   19.0M of 2G
 
+Map/Reduce of IP Count 
+- inputdata
+
+Hello Cloud 
+Currnt time is :2012-12-05 11:32:00 -0800 
+2012-12-03 00:00:00 UTC - 3 
+2012-12-04 00:00:00 UTC - 7 
+2012-12-05 00:00:00 UTC - 6 
+2012-12-05 08:00:00 UTC - 3 
+2012-12-05::11::24 - 10 
+2012-12-05::11::25 - 5 
+2012-12-05::11::30 - 2 
+2012-12-05::11::32 - 0 
+
+-outputdata
+[2012-12-05 13:41:38] INFO  WEBrick 1.3.1
+[2012-12-05 13:41:38] INFO  ruby 1.9.3 (2012-04-20) [i386-mingw32]
+== Sinatra/1.3.3 has taken the stage on 1131 for development with backup from WEBrick
+[2012-12-05 13:41:38] INFO  WEBrick::HTTPServer#start: pid=11992 port=1131
+Here is a count of the IP's that hit the site: [{"_id"=>"127.0.0.1", "value"=>{"count"=>36.0}}]
+127.0.0.1 - - [05/Dec/2012 13:41:42] "GET / HTTP/1.1" 200 101 0.1880
+ADMINIB-LA7QDKT - - [05/Dec/2012:13:41:41 Pacific Standard Time] "GET / HTTP/1.1" 200 101
+- -> /
+127.0.0.1 - - [05/Dec/2012 13:41:42] "GET /favicon.ico HTTP/1.1" 404 447 0.0010
+ADMINIB-LA7QDKT - - [05/Dec/2012:13:41:42 Pacific Standard Time] "GET /favicon.ico HTTP/1.1" 404 447
+- -> /favicon.ico
