@@ -4,22 +4,6 @@ require 'sinatra'
 #require 'socket'
 
 require './mongocloud'
-
-helpers do
-  
-  def print(text)
-         
-      puts text
-      if(@returnstr == nil) then
-        @returnstr =  String.new
-        @returnstr = "#{text} <br/>" 
-      else   
-        @returnstr = "#{@returnstr} #{text} <br/>"
-      end
-  end  
-
-end  
-  
   
 get '/' do
   
@@ -27,7 +11,11 @@ get '/' do
  
   #IPSocket.getaddress(Socket.gethostname).gsub!(/.\d{1,3}$/, '.255')
  
-  tday = Time.now.to_date
+  thetime = Time.new
+  print("Currnt time is :#{thetime}")
+  
+  tday = "#{thetime.to_date}::#{thetime.hour}::#{thetime.min}"
+  
   puts tday
   
   @date = CloudDate.where(thedate: tday).first

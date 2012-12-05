@@ -14,18 +14,37 @@ configure do
   end
  end
 
+
+helpers do
+  
+  def print(text)
+         
+      puts text
+      if(@returnstr == nil) then
+        @returnstr =  String.new
+        @returnstr = "#{text} <br/>" 
+      else   
+        @returnstr = "#{@returnstr} #{text} <br/>"
+      end
+  end  
+
+end  
 #mongoid_conf = Mongoid.load!("mongoid.yml")
 
 # This is a CloudDate
 class CloudDate
  include Mongoid::Document
-
- field :thedate, type: Date
+ include Mongoid::Timestamps
+ 
+ #counter_cache :name => 'ips', :field => 'ipcount'
+ 
+ #field :thedate, type: Date
+ field :thedate, type: String # need to be more grandular
  
  has_many :cloudips,  class_name: 'CloudIP', inverse_of: :clouddate
  
  validates_uniqueness_of :thedate
- 
+  
 end
 
 class CloudIP
