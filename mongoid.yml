@@ -1,0 +1,6 @@
+development:
+  sessions:
+    default:
+      database: mongocloud-db
+      hosts:
+        - localhost:27017
