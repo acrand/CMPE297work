@@ -1,7 +1,6 @@
 require "bundler/setup"
 require 'rubygems'
 require 'sinatra'
-#require 'socket'
 
 require './mongocloud'
 require './ipcount_mr'

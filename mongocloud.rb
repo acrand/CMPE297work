@@ -4,7 +4,14 @@ require 'mongoid'
 require 'mongo'
 
 #Configure MongoDB block
-
+configure do
+  Mongoid.configure do |config|
+    # Mongoid
+    name = "mongocloud-db"
+    host = "localhost"
+    config.master = Mongo::Connection.new.db(name)
+  end
+ end
 
 helpers do
   

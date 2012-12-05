@@ -1,7 +1,3 @@
-require "bundler/setup"
-require 'rubygems'
-require 'sinatra'
-
 get '/ipcount' do  
   
   map = "function() {
