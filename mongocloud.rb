@@ -1,17 +1,20 @@
-require 'sinatra'
-require 'mongo'
+#require 'rubygems'
+#gem 'mongoid' , '=2.5.1'
 require 'mongoid'
+require 'mongo'
 
-=begin
-Mongoid.configure do |config|
+#Configure MongoDB block
+
+configure do
+  Mongoid.configure do |config|
     # Mongoid
-  name = "mongocloud-db"
-  host = "localhost"
-  config.master = Mongo::Connection.new.db(name)
-end
-=end
+    name = "mongocloud-db"
+    host = "localhost"
+    config.master = Mongo::Connection.new.db(name)
+  end
+ end
 
-mongoid_conf = Mongoid.load!("mongoid.yml")
+#mongoid_conf = Mongoid.load!("mongoid.yml")
 
 # This is a CloudDate
 class CloudDate
