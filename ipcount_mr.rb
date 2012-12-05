@@ -2,11 +2,7 @@ require "bundler/setup"
 require 'rubygems'
 require 'sinatra'
 
-require './mongocloud'
-
-set :port, 1131
-
-get '/' do  
+get '/ipcount' do  
   
   map = "function() {
     emit(this.ip, {count: 1});

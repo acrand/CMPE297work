@@ -4,6 +4,7 @@ require 'sinatra'
 #require 'socket'
 
 require './mongocloud'
+require './ipcount_mr'
   
 get '/' do
   
